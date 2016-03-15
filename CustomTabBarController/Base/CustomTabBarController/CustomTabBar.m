@@ -49,11 +49,10 @@
             
         }];
     }
-
 }
 
 /**
- *  设置模式选中的ViewController
+ *  默认选中的ViewController
  *
  *  @param tabBarSelectedIndex slelectIndex
  */
@@ -73,21 +72,23 @@
 {
     // 取Tag
     NSInteger selectIndex = sender.tag;
+    // Block 回调
     _tabbarItemSelectBlock(selectIndex);
     
+    // 循环所有的Items
     for (NSInteger i = 0; i < _tabBarItemsArray.count; i++) {
         CustomTabBarItem *item = [_tabBarItemsArray objectAtIndex:i];
         // 重新设置Tabbar Item 标题颜色
         item.titleColor = [UIColor blackColor];
-        // Tabbar Item ImageView 高亮取消
+        // Tabbar Item ImageView 取消高亮
         item.itemHighlighted = NO;
     }
     
-    // 取当前TabbarItem
+    // 取当前Tabbar Item
     CustomTabBarItem *item = [_tabBarItemsArray objectAtIndex:selectIndex];
-    // 当前 Title 文字颜色
+    // 设置当前 Title 文字颜色
     item.titleColor = [UIColor blueColor];
-    // 当前ImageView 高亮
+    // 设置当前 ImageView 高亮
     item.itemHighlighted = YES;
 }
 

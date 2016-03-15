@@ -20,6 +20,9 @@
     [self initCustomNavigationItem];
 }
 
+/**
+ *  自定义返回按钮
+ */
 - (void)initCustomNavigationItem
 {
     if (!self.navigationItem.leftBarButtonItem) {
@@ -30,11 +33,20 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
+/**
+ *  返回按钮点击事件
+ *
+ *  @param sender
+ */
 - (void)onGoBack:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-// 是否隐藏返回按钮
+/**
+ *  是否隐藏返回按钮
+ *
+ *  @param yesOrNo yesOrNo
+ */
 - (void)setBackButtonHidden:(BOOL)yesOrNo
 {
     if (yesOrNo) {
