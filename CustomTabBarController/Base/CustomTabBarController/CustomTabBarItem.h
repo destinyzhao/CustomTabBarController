@@ -24,7 +24,12 @@
 /**
  *  Tabbar Item 标题
  */
-@property (strong, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *title;
+/**
+ *  badgeValue
+ */
+@property (copy, nonatomic) NSString *badgeValue;
+
 /**
  *  Tabbar Item 标题颜色
  */

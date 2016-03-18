@@ -10,9 +10,12 @@
 #import "CustomTabBarItem.h"
 
 #define TABBAR_HEIGHT self.frame.size.height
-#define TABBAR_WIDTH  self.frame.size.width/4
 
 @interface CustomTabBar ()
+/**
+ *  Tabbar Item Width
+ */
+@property (assign, nonatomic) CGFloat tabarItemWidth;
 
 @end
 
@@ -34,7 +37,9 @@
  */
 - (void)setTabBarItemsArray:(NSMutableArray *)tabBarItemsArray
 {
+    _tabarItemWidth  = self.frame.size.width/tabBarItemsArray.count;
     _tabBarItemsArray = tabBarItemsArray;
+    
     for (NSInteger i = 0; i < tabBarItemsArray.count; i++) {
         CustomTabBarItem *item = [tabBarItemsArray objectAtIndex:i];
         item.tabBarItemBtn.tag = i;
@@ -43,8 +48,8 @@
         
         [item mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(0);
-            make.left.mas_equalTo(i*TABBAR_WIDTH);
-            make.width.mas_equalTo(TABBAR_WIDTH);
+            make.left.mas_equalTo(i*_tabarItemWidth);
+            make.width.mas_equalTo(_tabarItemWidth);
             make.height.mas_equalTo(TABBAR_HEIGHT);
             
         }];

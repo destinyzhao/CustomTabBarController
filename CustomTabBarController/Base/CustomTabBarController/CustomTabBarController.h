@@ -30,4 +30,12 @@
  */
 - (void)animationShowOrHideTabBar:(NSInteger)viewControllersCount;
 
+/**
+ *  设置Item的Badge
+ *
+ *  @param badgeValue Badge
+ *  @param atIndex    Tabbar Item Index
+ */
+- (void)setBadgeValue:(NSString *)badgeValue atIndex:(NSInteger)atIndex;
+
 @end

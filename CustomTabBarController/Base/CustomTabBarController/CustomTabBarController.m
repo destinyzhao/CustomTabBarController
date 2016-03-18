@@ -37,6 +37,10 @@
     [self setUpTabbar];
     [self setUpTabbarItems];
     [self setupViewController];
+    
+    [self setBadgeValue:@"9" atIndex:0];
+    [self setBadgeValue:@"990" atIndex:1];
+    [self setBadgeValue:@"99" atIndex:3];
 }
 
 /**
@@ -47,7 +51,7 @@
     __weak __typeof(&*self)weakSelf = self;
     
     _customTabBar = [[CustomTabBar alloc]initWithFrame:self.tabBar.bounds];
-    _customTabBar.backgroundColor = [UIColor yellowColor];
+    _customTabBar.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_customTabBar];
     
     [_customTabBar mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -69,9 +73,10 @@
 - (void)setUpTabbarItems
 {
     [self tabBarItemWithTitle:@"首页" normalImageName:@"首页" highlightedImage:@"首页-1"];
+    [self tabBarItemWithTitle:@"商超" normalImageName:@"应用" highlightedImage:@"应用-1"];
+    [self tabBarItemWithTitle:@"商城" normalImageName:@"消息" highlightedImage:@"消息-1"];
+    [self tabBarItemWithTitle:@"购物车" normalImageName:@"应用" highlightedImage:@"应用-1"];
     [self tabBarItemWithTitle:@"我的" normalImageName:@"我的" highlightedImage:@"我的-1"];
-    [self tabBarItemWithTitle:@"消息" normalImageName:@"消息" highlightedImage:@"消息-1"];
-    [self tabBarItemWithTitle:@"应用" normalImageName:@"应用" highlightedImage:@"应用-1"];
     _customTabBar.tabBarItemsArray = _tabbarItemArray;
 }
 
@@ -80,7 +85,7 @@
  */
 - (void)setupViewController
 {
-    NSArray *storyBoardArray = @[@"Storyboard1",@"Storyboard2",@"Storyboard3",@"Storyboard4"];
+    NSArray *storyBoardArray = @[@"Storyboard1",@"Storyboard2",@"Storyboard3",@"Storyboard4",@"Storyboard5"];
     NSMutableArray *viewControllerArray = [NSMutableArray array];
     for (NSString *sbName in storyBoardArray) {
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:sbName bundle:nil];
@@ -108,6 +113,18 @@
     item.itemNormalImage = [UIImage imageNamed:normalImageName];
     item.itemHighlightedImage = [UIImage imageNamed:highlightedImage];
     [_tabbarItemArray addObject:item];
+}
+
+/**
+ *  设置Item的Badge
+ *
+ *  @param badgeValue Badge
+ *  @param atIndex    Tabbar Item Index
+ */
+- (void)setBadgeValue:(NSString *)badgeValue atIndex:(NSInteger)atIndex
+{
+    CustomTabBarItem *item = [_tabbarItemArray objectAtIndex:atIndex];
+    item.badgeValue = badgeValue;
 }
 
 /**

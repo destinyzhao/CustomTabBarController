@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E9BC29EFD189F69DADFC89D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 716FD59731231D473893CD6A /* libPods.a */; };
+		FA526B291C9B8DD30068264C /* Storyboard5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA526B281C9B8DD30068264C /* Storyboard5.storyboard */; };
 		FA5742591C964D3C007B7BF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5742581C964D3C007B7BF8 /* main.m */; };
 		FA57425C1C964D3C007B7BF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA57425B1C964D3C007B7BF8 /* AppDelegate.m */; };
 		FA57425F1C964D3C007B7BF8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA57425E1C964D3C007B7BF8 /* ViewController.m */; };
@@ -49,6 +50,7 @@
 		1A2C2199257A816418E0AC9C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1F2E8CFA4CFD6E8716412329 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		716FD59731231D473893CD6A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA526B281C9B8DD30068264C /* Storyboard5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard5.storyboard; sourceTree = "<group>"; };
 		FA5742541C964D3C007B7BF8 /* CustomTabBarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTabBarController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5742581C964D3C007B7BF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA57425A1C964D3C007B7BF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				FA57428D1C964D7F007B7BF8 /* Storyboard2.storyboard */,
 				FA57428F1C964D87007B7BF8 /* Storyboard3.storyboard */,
 				FA5742911C964D8F007B7BF8 /* Storyboard4.storyboard */,
+				FA526B281C9B8DD30068264C /* Storyboard5.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			files = (
 				FA5742671C964D3C007B7BF8 /* LaunchScreen.storyboard in Resources */,
 				FA5742901C964D87007B7BF8 /* Storyboard3.storyboard in Resources */,
+				FA526B291C9B8DD30068264C /* Storyboard5.storyboard in Resources */,
 				FA5742641C964D3C007B7BF8 /* Assets.xcassets in Resources */,
 				FA57428C1C964D77007B7BF8 /* Storyboard1.storyboard in Resources */,
 				FA57428E1C964D7F007B7BF8 /* Storyboard2.storyboard in Resources */,
