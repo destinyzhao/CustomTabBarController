@@ -26,9 +26,10 @@
 /**
  *  显示和隐藏Tabbar
  *
- *  @param viewControllersCount  viewControllers Count
+ *  @param
  */
-- (void)animationShowOrHideTabBar:(NSInteger)viewControllersCount;
+- (void)setTbabBarHidden:(BOOL)hidden;
+- (void)tabBarHidden:(BOOL)hidden;
 
 /**
  *  设置Item的Badge

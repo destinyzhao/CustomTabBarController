@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 #import "CustomTabBar.h"
 
+#define appDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
 @interface CustomNavigationController ()<UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 
 @end
@@ -30,6 +32,11 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+    if (self.viewControllers.count == 1)
+    {
+        [appDelegate.customTabBarController tabBarHidden:YES];
+    }
+    
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)] && animated == YES) {
         self.interactivePopGestureRecognizer.enabled = NO;
     }
@@ -55,26 +62,8 @@
 #pragma mark UINavigationController Delegate
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.interactivePopGestureRecognizer.enabled = YES;
-    }
+    [self adjustSettings];
 }
-
-/**
- *  设置Tabbar 显示和隐藏
- *
- *  @param navigationController navigationController
- *  @param viewController       viewController
- *  @param animated             animated
- */
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    NSUInteger viewControllersCount = navigationController.viewControllers.count;
-
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [appDelegate.customTabBarController animationShowOrHideTabBar:viewControllersCount];
-}
-
 
 #pragma mark UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
@@ -85,6 +74,17 @@
         }
     }
     return YES;
+}
+
+- (void)adjustSettings
+{
+    if (self.viewControllers.count == 1) {
+        [appDelegate.customTabBarController setTbabBarHidden:NO];
+        self.interactivePopGestureRecognizer.enabled = NO;
+    }else{
+        [appDelegate.customTabBarController setTbabBarHidden:YES];
+        self.interactivePopGestureRecognizer.enabled = YES;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

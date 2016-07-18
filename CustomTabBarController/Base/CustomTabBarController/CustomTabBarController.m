@@ -130,28 +130,33 @@
 /**
  *  显示和隐藏Tabbar
  *
- *  @param viewControllersCount  viewControllers Count
+ *  @param
  */
-- (void)animationShowOrHideTabBar:(NSInteger)viewControllersCount
+- (void)setTbabBarHidden:(BOOL)hidden
 {
-    if (viewControllersCount > 1) {
+    if (hidden) {
         // 影藏Tabbar
-        [self.tabBar setHidden:YES];
+        [self tabBarHidden:YES];
         [_customTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
             make.bottom.mas_equalTo(_customTabBar.frame.size.height);
         }];
     }else{
-        [self.tabBar setHidden:NO];
+        [self tabBarHidden:NO];
         // 显示Tabbar
         [_customTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
             make.bottom.mas_equalTo(0);
         }];
     }
     //动画
-    [UIView animateWithDuration:0.15 animations:^{
+    [UIView animateWithDuration:0.1 animations:^{
         [self.view layoutIfNeeded];
     }];
+    
+}
 
+- (void)tabBarHidden:(BOOL)hidden
+{
+    [self.tabBar setHidden:hidden];
 }
 
 - (void)didReceiveMemoryWarning {
