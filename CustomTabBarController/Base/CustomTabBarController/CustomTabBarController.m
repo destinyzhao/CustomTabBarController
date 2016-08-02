@@ -34,8 +34,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.tabBar.hidden = YES;
-    
     _tabbarItemArray = [NSMutableArray array];
     [self setUpTabbar];
     [self setUpTabbarItems];

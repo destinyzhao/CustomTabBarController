@@ -9,7 +9,7 @@
         <!--Home View Controller-->
         <scene sceneID="lAT-o2-x0p">
             <objects>
-                <viewController id="6qy-nS-hRr" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="6qy-nS-hRr" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="elC-Pc-y1Z"/>
                         <viewControllerLayoutGuide type="bottom" id="xAA-ZC-xe5"/>
