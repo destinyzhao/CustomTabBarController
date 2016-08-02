@@ -14,6 +14,19 @@
 
 @implementation BaseViewController
 
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.navigationController.viewControllers.count > 1) {
+        self.tabBarController.hidesBottomBarWhenPushed = YES;
+    }
+    else
+    {
+        self.tabBarController.hidesBottomBarWhenPushed = NO;
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

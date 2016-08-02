@@ -9,7 +9,7 @@
 #import "CustomTabBarController.h"
 #import "CustomTabBarItem.h"
 
-@interface CustomTabBarController ()
+@interface CustomTabBarController ()<UINavigationControllerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *tabbarItemArray;
 
@@ -33,6 +33,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.tabBar.hidden = YES;
+    
     _tabbarItemArray = [NSMutableArray array];
     [self setUpTabbar];
     [self setUpTabbarItems];
@@ -127,31 +130,34 @@
     item.badgeValue = badgeValue;
 }
 
+-(void)setHidesBottomBarWhenPushed:(BOOL)hidesBottomBarWhenPushed{
+    self.tabBar.hidden = hidesBottomBarWhenPushed;
+    self.customTabBar.hidden = hidesBottomBarWhenPushed;
+}
+
 /**
  *  显示和隐藏Tabbar
  *
  *  @param
  */
-- (void)setTbabBarHidden:(BOOL)hidden
+- (void)setTabBarHidden
 {
-    if (hidden) {
-        // 影藏Tabbar
-        [self tabBarHidden:YES];
-        [_customTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.bottom.mas_equalTo(_customTabBar.frame.size.height);
-        }];
-    }else{
-        [self tabBarHidden:NO];
-        // 显示Tabbar
-        [_customTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.bottom.mas_equalTo(0);
-        }];
-    }
-    //动画
-    [UIView animateWithDuration:0.1 animations:^{
-        [self.view layoutIfNeeded];
+    [self tabBarHidden:YES];
+    // 显示Tabbar
+    [_customTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.tabBar.frame.size.height);
     }];
+}
+
+- (void)setTabBarShow
+{
+    [self.view layoutIfNeeded];
     
+    [self tabBarHidden:NO];
+    // 显示Tabbar
+    [_customTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(0);
+    }];
 }
 
 - (void)tabBarHidden:(BOOL)hidden

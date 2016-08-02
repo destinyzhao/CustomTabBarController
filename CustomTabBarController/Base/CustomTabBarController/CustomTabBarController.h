@@ -28,8 +28,10 @@
  *
  *  @param
  */
-- (void)setTbabBarHidden:(BOOL)hidden;
+- (void)setTabBarHidden;
+- (void)setTabBarShow;
 - (void)tabBarHidden:(BOOL)hidden;
+- (void)setHidesBottomBarWhenPushed:(BOOL)hidesBottomBarWhenPushed;
 
 /**
  *  设置Item的Badge

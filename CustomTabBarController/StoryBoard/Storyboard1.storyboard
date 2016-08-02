@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hCd-3w-kHd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hCd-3w-kHd">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Home View Controller-->
@@ -29,6 +29,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="测试" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPu-lc-D8n">
                                 <rect key="frame" x="20" y="546" width="280" height="21"/>
+                                <color key="backgroundColor" red="0.86274509799999999" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ePX-uA-myM"/>
                                 </constraints>
@@ -59,7 +60,7 @@
         <!--Detail View Controller-->
         <scene sceneID="Er2-5x-vxO">
             <objects>
-                <viewController id="HGI-R7-Cgo" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="HGI-R7-Cgo" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YPl-Qo-osz"/>
                         <viewControllerLayoutGuide type="bottom" id="GBD-tl-FGK"/>
@@ -69,7 +70,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="测试" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEi-gm-zgs">
-                                <rect key="frame" x="20" y="546" width="280" height="21"/>
+                                <rect key="frame" x="20" y="539" width="280" height="21"/>
+                                <color key="backgroundColor" red="0.34803705579999999" green="1" blue="0.35345204740000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="mZl-9T-a8Q"/>
                                 </constraints>
@@ -81,7 +83,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="nEi-gm-zgs" secondAttribute="trailing" constant="20" id="5ju-5d-wD5"/>
-                            <constraint firstItem="GBD-tl-FGK" firstAttribute="top" secondItem="nEi-gm-zgs" secondAttribute="bottom" constant="1" id="QHW-Dt-a6i"/>
+                            <constraint firstItem="GBD-tl-FGK" firstAttribute="top" secondItem="nEi-gm-zgs" secondAttribute="bottom" constant="8" id="QHW-Dt-a6i"/>
                             <constraint firstItem="nEi-gm-zgs" firstAttribute="leading" secondItem="LVm-rD-NuU" secondAttribute="leading" constant="20" id="gcq-U7-xVb"/>
                         </constraints>
                     </view>

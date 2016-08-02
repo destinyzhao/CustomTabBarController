@@ -7,12 +7,18 @@
 //
 
 #import "HomeViewController.h"
+#import "DetailViewController.h"
 
 @interface HomeViewController ()
 
 @end
 
 @implementation HomeViewController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,7 +32,10 @@
 }
 
 - (IBAction)pushBtnClicked:(id)sender {
-    [self performSegueWithIdentifier:@"showDetailVC" sender:nil];
+    
+    DetailViewController *vc = [[UIStoryboard storyboardWithName:@"Storyboard1" bundle:nil] instantiateViewControllerWithIdentifier:@"DetailVC"];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 /*
