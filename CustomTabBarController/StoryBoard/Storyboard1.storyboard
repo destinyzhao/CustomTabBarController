@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Home View Controller-->
@@ -28,7 +29,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="测试" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPu-lc-D8n">
-                                <rect key="frame" x="20" y="546" width="280" height="21"/>
+                                <rect key="frame" x="20" y="497" width="280" height="21"/>
                                 <color key="backgroundColor" red="0.86274509799999999" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ePX-uA-myM"/>
@@ -37,15 +38,28 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注意：一级页面Viwe和控件距离底部49（tabbar的高度）" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szc-dB-9LA">
+                                <rect key="frame" x="24" y="264" width="272" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="slj-Kw-PIN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="pJS-A4-QTo" firstAttribute="top" secondItem="elC-Pc-y1Z" secondAttribute="bottom" constant="50" id="0rk-1C-SLi"/>
+                            <constraint firstItem="Szc-dB-9LA" firstAttribute="centerX" secondItem="8c8-Lr-gbk" secondAttribute="centerX" id="5Z7-dX-V4p"/>
                             <constraint firstItem="oPu-lc-D8n" firstAttribute="leading" secondItem="8c8-Lr-gbk" secondAttribute="leading" constant="20" id="NxD-Oi-060"/>
                             <constraint firstAttribute="trailing" secondItem="pJS-A4-QTo" secondAttribute="trailing" constant="20" id="OQm-Fa-rr8"/>
-                            <constraint firstItem="xAA-ZC-xe5" firstAttribute="top" secondItem="oPu-lc-D8n" secondAttribute="bottom" constant="1" id="f1b-xL-uck"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Szc-dB-9LA" secondAttribute="trailing" constant="8" id="UBV-GG-oTw"/>
+                            <constraint firstItem="Szc-dB-9LA" firstAttribute="leading" secondItem="8c8-Lr-gbk" secondAttribute="leadingMargin" constant="8" id="X3w-0a-qjp"/>
+                            <constraint firstItem="xAA-ZC-xe5" firstAttribute="top" secondItem="oPu-lc-D8n" secondAttribute="bottom" constant="50" id="f1b-xL-uck"/>
                             <constraint firstAttribute="trailing" secondItem="oPu-lc-D8n" secondAttribute="trailing" constant="20" id="uc2-Dt-RLC"/>
                             <constraint firstItem="pJS-A4-QTo" firstAttribute="leading" secondItem="8c8-Lr-gbk" secondAttribute="leading" constant="20" id="x7v-eC-4Bg"/>
+                            <constraint firstItem="Szc-dB-9LA" firstAttribute="centerY" secondItem="8c8-Lr-gbk" secondAttribute="centerY" id="y8O-fs-LR5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vYd-1y-xIc"/>

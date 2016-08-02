@@ -8,6 +8,10 @@
 
 #import "CustomNavigationController.h"
 #import "CustomTabBar.h"
+#import "AppDelegate.h"
+
+// 获取AppDelegate
+#define appDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
 @interface CustomNavigationController ()<UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 
@@ -56,6 +60,7 @@
 {
     if (self.viewControllers.count > 1) {
         self.interactivePopGestureRecognizer.enabled = YES;
+        [appDelegate.customTabBarController setTabBarHidden];
     }
 }
 
@@ -63,6 +68,7 @@
 {
     if (self.viewControllers.count == 1) {
         self.interactivePopGestureRecognizer.enabled = NO;
+        [appDelegate.customTabBarController setTabBarShow];
     }
 }
 
