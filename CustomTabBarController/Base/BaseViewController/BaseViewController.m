@@ -14,15 +14,6 @@
 
 @implementation BaseViewController
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    if (self.navigationController.viewControllers.count == 1) {
-        self.tabBarController.tabBar.hidden = YES;
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

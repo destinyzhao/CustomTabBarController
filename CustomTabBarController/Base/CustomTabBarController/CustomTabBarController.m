@@ -51,6 +51,8 @@
 {
     __weak __typeof(&*self)weakSelf = self;
     
+    self.tabBar.hidden = YES;
+    
     _customTabBar = [[CustomTabBar alloc]initWithFrame:self.tabBar.bounds];
     _customTabBar.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_customTabBar];
@@ -140,7 +142,6 @@
  */
 - (void)setTabBarHidden
 {
-    [self tabBarHidden:YES];
     // 显示Tabbar
     [_customTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.tabBar.frame.size.height);
@@ -149,9 +150,6 @@
 
 - (void)setTabBarShow
 {
-    [self.view layoutIfNeeded];
-    
-    [self tabBarHidden:NO];
     // 显示Tabbar
     [_customTabBar mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(0);
